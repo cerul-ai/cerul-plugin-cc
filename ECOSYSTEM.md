@@ -4,23 +4,43 @@
 
 ## 总览
 
-| 平台 | 插件生态 | 分发方式 | 优先级 | 状态 |
-|------|---------|---------|-------|------|
-| **Claude Code** | Plugin Marketplace | GitHub 仓库 → `/plugin marketplace add` | P0 | ✅ 已完成 |
-| **Gemini CLI** | Extensions 系统 | GitHub + MCP server，无需审批 | P1 | ✅ 已完成 |
-| **OpenClaw** | ClawHub 技能注册表 | `clawhub publish`，13,700+ skills | P1 | ✅ 已完成 |
-| **Codex CLI** | 插件系统（2026.3 上线） | plugin.json，结构类似 Claude Code | P2 | ⬜ 等第三方发布开放 |
-| **Windsurf** | Skills 系统 | SKILL.md，兼容 Agent Skills 标准 | P2 | ⬜ 复用现有 SKILL.md |
-| **Cline** | Skills（v3.48+） | LobeHub / n-skills marketplace | P3 | ⬜ 复用现有 SKILL.md |
-| **OpenCode** | 插件系统 | npm 发布 + opencode.cafe | P3 | ⬜ 待做 |
-| **Roo Code** | Modes Gallery | 自定义 Mode | P4 | ⬜ 低优先 |
-| **Cursor** | 无独立插件系统 | 仅 VS Code 扩展 | — | ❌ 不适合 |
-| **Aider** | 仅 hooks | 无 marketplace | — | ❌ 不适合 |
-| **Amp** | 仅 MCP | 无 marketplace | — | ❌ 不适合 |
+### 已完成的插件/扩展
 
-## 各平台详情
+| 平台 | 类型 | 安装方式 | 状态 |
+|------|------|---------|------|
+| **Claude Code** | Plugin Marketplace | `claude plugin marketplace add cerul-ai/cerul-plugin-cc` | ✅ 已完成 |
+| **Gemini CLI** | Extension (MCP) | `gemini extensions install https://github.com/cerul-ai/cerul-gemini-ext` | ✅ 已完成 |
+| **OpenClaw** | ClawHub Skill | `clawhub install cerul` | ✅ 已完成 |
 
-### P0: Claude Code Plugin（已完成）
+### 待提交的分发渠道
+
+| 渠道 | 类型 | 提交方式 | 投入 | 状态 |
+|------|------|---------|------|------|
+| **awesome-opencode** | GitHub 策展列表 (4.8k stars) | PR 提交 | 5 分钟 | ⬜ 待做 |
+| **opencode.cafe** | 社区 marketplace 网站 | 网站表单 | 5 分钟 | ⬜ 待做 |
+| **opencode.ai/ecosystem** | OpenCode 官方生态页 | PR 到 anomalyco/opencode | 5 分钟 | ⬜ 待做 |
+| **n-skills** | 策展型 skill 合集 | Issue + PR | 10 分钟 | ⬜ 待做 |
+| **SkillHub** | 7,000+ skills 网站 | 网站上传 | 10 分钟 | ⬜ 待做 |
+| **Cline MCP Marketplace** | 官方 Cline 插件市场 | Issue + PR 到 cline/mcp-marketplace | 10 分钟 | ⬜ 待做 |
+| **Windsurf** | 文档引导安装 | 在 cerul 主 repo README 加说明 | 5 分钟 | ⬜ 待做 |
+| **claude-plugins.dev** | 通用 AI agent 索引 | GitHub 自动索引 | 0 分钟 | ⬜ 待确认 |
+
+### 暂缓的平台
+
+| 平台 | 原因 | 状态 |
+|------|------|------|
+| **Codex CLI** | 第三方发布标注 "coming soon"，需等开放 | ⏸ 等待 |
+| **OpenCode npm plugin** | 已有 cerul npm SDK，可后续加 plugin 入口 | ⏸ 低优先 |
+| **Roo Code** | 用户量小，需写自定义 Mode | ❌ 暂不做 |
+| **Cursor** | 无独立插件系统，仅 VS Code 扩展 | ❌ 不适合 |
+| **Aider** | 仅 hooks，无 marketplace | ❌ 不适合 |
+| **Amp** | 仅 MCP，无 marketplace | ❌ 不适合 |
+
+---
+
+## 已完成的平台详情
+
+### Claude Code Plugin
 
 - **仓库**: https://github.com/cerul-ai/cerul-plugin-cc
 - **安装方式**:
@@ -28,88 +48,83 @@
   claude plugin marketplace add cerul-ai/cerul-plugin-cc
   claude plugin install cerul@cerul-plugin
   ```
-- **结构**: marketplace.json → plugin.json → skills/cerul/SKILL.md
-- **自动更新**: 支持
 
----
-
-### P1: Gemini CLI Extension（已完成）
+### Gemini CLI Extension
 
 - **仓库**: https://github.com/cerul-ai/cerul-gemini-ext
 - **安装方式**:
   ```bash
   gemini extensions install https://github.com/cerul-ai/cerul-gemini-ext
   ```
-- **结构**: gemini-extension.json + MCP server（cerul_search / cerul_usage 工具）+ GEMINI.md
-- **自动更新**: 支持
 
----
+### OpenClaw ClawHub
 
-### P1: OpenClaw ClawHub（已完成）
-
-- **Slug**: `cerul` (ClawHub registry)
+- **Slug**: `cerul`
 - **安装方式**:
   ```bash
   clawhub install cerul
   ```
-- **源码**: `/Users/jessytsui/cerul-ai/cerul-openclaw-skill/SKILL.md`
 - **更新**: `clawhub publish ./cerul-openclaw-skill --slug cerul --version X.Y.Z`
 
 ---
 
-### P2: Codex CLI Plugin
+## 待提交渠道操作指南
 
-- **文档**: https://developers.openai.com/codex/plugins
-- **优势**: 结构与 Claude Code 几乎一致（plugin.json + skills + MCP）
-- **实现方式**:
-  - 创建仓库（如 `cerul-ai/cerul-plugin-codex`）
-  - 结构: `.codex-plugin/plugin.json` + skills 目录
-  - 跨兼容 Claude Code 生态
-- **阻塞**: 第三方自助发布目前标注 "coming soon"，需等开放
-- **参考**: openai/codex-plugin-cc 是目前最成熟的 Codex 插件案例
+### 1. awesome-opencode
 
----
+- **地址**: https://github.com/awesome-opencode/awesome-opencode
+- **提交方式**: Fork → 编辑 README.md → 在合适分类下添加 Cerul 条目 → 提交 PR
+- **条目格式**: `- [Cerul](https://github.com/cerul-ai/cerul) - Video search for AI agents — search what was said, shown, or presented in tech talks, podcasts, and conferences.`
+- **分类**: 放在 Tools 或 Plugins 下
 
-### P2: Windsurf Skills
+### 2. opencode.cafe
 
-- **优势**: 2025 Gartner 领导者象限，质量导向生态
-- **实现方式**:
-  - 复制 SKILL.md 到 `~/.codeium/windsurf/skills/cerul/`
-  - 遵循质量指南（metadata < 100 tokens, body < 500 行）
-  - 兼容 Agent Skills 标准规范
-- **注意**: 和 Claude Code / Codex / Cline 使用同一个 SKILL.md 标准
+- **地址**: https://www.opencode.cafe/
+- **提交方式**: 访问网站 → 点击 Submit → 填写表单（GitHub 仓库 URL + 描述）
+- **分类**: Tools 或 MCP Servers
 
----
+### 3. opencode.ai/ecosystem
 
-### P3: Cline Skills
+- **地址**: https://opencode.ai/docs/ecosystem/
+- **提交方式**: PR 到 https://github.com/anomalyco/opencode 的文档目录
+- **内容**: 添加 Cerul 到生态页
 
-- **实现方式**:
-  - 复用现有 SKILL.md
-  - 发布到 LobeHub（115,000+ skills）或 n-skills marketplace
-  - 遵循 Agent Skills 规范
-- **参考**: https://lobehub.com/skills, https://github.com/numman-ali/n-skills
+### 4. n-skills
 
----
+- **地址**: https://github.com/numman-ali/n-skills
+- **提交方式**: 先开 Issue 描述 Cerul skill → 审核通过后提交 PR
+- **注意**: 策展型，有质量门槛
 
-### P3: OpenCode Plugin
+### 5. SkillHub
 
-- **文档**: https://opencode.ai/docs/plugins/
-- **实现方式**:
-  - 创建 JS/TS 模块，导出 plugin 函数
-  - 定义 AI 可调用的 tools（video search）
-  - 发布到 npm（如 `@cerul/opencode-plugin`）
-  - 注册到 opencode.cafe 社区平台
-- **注意**: 原 OpenCode 项目已归档，后续项目为 "Crush"
+- **地址**: https://www.skillhub.club
+- **提交方式**: 网站上传 SKILL.md
+- **内容**: 复用现有 SKILL.md
+
+### 6. Cline MCP Marketplace
+
+- **地址**: https://github.com/cline/mcp-marketplace
+- **提交方式**: 用 Issue 模板提交（GitHub 仓库 URL + 400×400 logo + 描述）→ 审核（约 2 天）
+- **内容**: 指向 cerul-gemini-ext 的 MCP server
+
+### 7. Windsurf
+
+- **无 marketplace**: 在 cerul 主 repo 的 README 添加 Windsurf 安装说明
+- **安装路径**: `~/.codeium/windsurf/skills/cerul/SKILL.md`
+
+### 8. claude-plugins.dev
+
+- **地址**: https://claude-plugins.dev
+- **提交方式**: 自动索引 GitHub 上的 Claude Code plugin
+- **操作**: 确认 cerul-plugin-cc 已被收录即可
 
 ---
 
 ## 跨平台策略
 
-2025年12月 Anthropic 发布 **Agent Skills 标准规范**，OpenAI 也已采纳。核心文件 SKILL.md 可跨以下平台复用：
-- Claude Code
-- Codex CLI
-- Windsurf
-- Cline
-- OpenClaw（ClawHub）
+核心资产：
+- **SKILL.md** — 跨 Claude Code / Codex / Windsurf / Cline / OpenClaw / OpenCode 复用
+- **MCP Server** (cerul-gemini-ext) — 跨 Gemini CLI / Cline / OpenCode 复用
+- **npm SDK** (cerul) — https://github.com/cerul-ai/cerul-js
 
-**建议**: 维护一份核心 SKILL.md，各平台仅做分发层适配（marketplace.json / extension manifest 等）。
+维护一份核心 SKILL.md + 一个 MCP server，各平台仅做分发层适配。
