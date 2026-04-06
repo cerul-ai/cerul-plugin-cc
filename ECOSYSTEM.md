@@ -8,7 +8,7 @@
 |------|---------|---------|-------|------|
 | **Claude Code** | Plugin Marketplace | GitHub 仓库 → `/plugin marketplace add` | P0 | ✅ 已完成 |
 | **Gemini CLI** | Extensions 系统 | GitHub + MCP server，无需审批 | P1 | ✅ 已完成 |
-| **OpenClaw** | ClawHub 技能注册表 | `clawhub publish`，13,700+ skills | P1 | ⬜ 待做 |
+| **OpenClaw** | ClawHub 技能注册表 | `clawhub publish`，13,700+ skills | P1 | ✅ 已完成 |
 | **Codex CLI** | 插件系统（2026.3 上线） | plugin.json，结构类似 Claude Code | P2 | ⬜ 等第三方发布开放 |
 | **Windsurf** | Skills 系统 | SKILL.md，兼容 Agent Skills 标准 | P2 | ⬜ 复用现有 SKILL.md |
 | **Cline** | Skills（v3.48+） | LobeHub / n-skills marketplace | P3 | ⬜ 复用现有 SKILL.md |
@@ -45,16 +45,15 @@
 
 ---
 
-### P1: OpenClaw ClawHub
+### P1: OpenClaw ClawHub（已完成）
 
-- **文档**: https://docs.openclaw.ai/tools/clawhub
-- **优势**: 社区活跃（13,700+ skills），语义搜索发现，低门槛发布
-- **实现方式**:
-  - 安装 clawhub CLI
-  - 复用现有 SKILL.md（可能需要调整 frontmatter 格式）
-  - `clawhub publish ./skills/cerul/`
-- **要求**: GitHub 账号（>1 周），semver 版本管理
-- **注意**: 支持 stars 和评论，有社区反馈机制
+- **Slug**: `cerul` (ClawHub registry)
+- **安装方式**:
+  ```bash
+  clawhub install cerul
+  ```
+- **源码**: `/Users/jessytsui/cerul-ai/cerul-openclaw-skill/SKILL.md`
+- **更新**: `clawhub publish ./cerul-openclaw-skill --slug cerul --version X.Y.Z`
 
 ---
 
