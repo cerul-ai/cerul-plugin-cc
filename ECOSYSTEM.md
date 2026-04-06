@@ -21,8 +21,8 @@
 | **opencode.ai/ecosystem** | OpenCode 官方生态页 | PR 到 anomalyco/opencode | 5 分钟 | ✅ PR #21201 待审核 |
 | **n-skills** | 策展型 skill 合集 | Issue + PR | 10 分钟 | ✅ Issue #21 待审核 |
 | **SkillHub** | 7,000+ skills 网站 | CLI 发布 | 10 分钟 | ⏸ 暂缓 |
-| **Cline MCP Marketplace** | 官方 Cline 插件市场 | Issue + PR 到 cline/mcp-marketplace | 10 分钟 | ⬜ 待做 |
-| **Windsurf** | 文档引导安装 | 在 cerul 主 repo README 加说明 | 5 分钟 | ⬜ 待做 |
+| **Cline MCP Marketplace** | 官方 Cline 插件市场 | Issue 到 cline/mcp-marketplace | 10 分钟 | ✅ 已提交 |
+| **Windsurf** | 文档引导安装 | 在 cerul 主 repo README 加说明 | 5 分钟 | ✅ 已完成 |
 | **claude-plugins.dev** | 通用 AI agent 索引 | GitHub 自动索引 | 0 分钟 | ⬜ 待确认 |
 
 ### 暂缓的平台
