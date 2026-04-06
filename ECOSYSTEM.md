@@ -7,7 +7,7 @@
 | 平台 | 插件生态 | 分发方式 | 优先级 | 状态 |
 |------|---------|---------|-------|------|
 | **Claude Code** | Plugin Marketplace | GitHub 仓库 → `/plugin marketplace add` | P0 | ✅ 已完成 |
-| **Gemini CLI** | Extensions 系统 | GitHub + MCP server，无需审批 | P1 | ⬜ 待做 |
+| **Gemini CLI** | Extensions 系统 | GitHub + MCP server，无需审批 | P1 | ✅ 已完成 |
 | **OpenClaw** | ClawHub 技能注册表 | `clawhub publish`，13,700+ skills | P1 | ⬜ 待做 |
 | **Codex CLI** | 插件系统（2026.3 上线） | plugin.json，结构类似 Claude Code | P2 | ⬜ 等第三方发布开放 |
 | **Windsurf** | Skills 系统 | SKILL.md，兼容 Agent Skills 标准 | P2 | ⬜ 复用现有 SKILL.md |
@@ -33,16 +33,15 @@
 
 ---
 
-### P1: Gemini CLI Extension
+### P1: Gemini CLI Extension（已完成）
 
-- **文档**: https://geminicli.com/docs/extensions/
-- **优势**: 1M+ 开发者，无需审批，直接发布到 GitHub
-- **实现方式**:
-  - 创建 GitHub 仓库（如 `cerul-ai/cerul-gemini-ext`）
-  - 包含 extension manifest + MCP server 配置 + GEMINI.md
-  - 用户通过 `gemini extensions install` 安装
-- **注意**: 需要提供 MCP server 或自定义 slash command
-- **参考**: Dynatrace、Elastic、Stripe 等都已发布官方 extension
+- **仓库**: https://github.com/cerul-ai/cerul-gemini-ext
+- **安装方式**:
+  ```bash
+  gemini extensions install https://github.com/cerul-ai/cerul-gemini-ext
+  ```
+- **结构**: gemini-extension.json + MCP server（cerul_search / cerul_usage 工具）+ GEMINI.md
+- **自动更新**: 支持
 
 ---
 
