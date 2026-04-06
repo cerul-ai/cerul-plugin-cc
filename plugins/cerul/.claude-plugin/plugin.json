@@ -1,0 +1,11 @@
+{
+  "name": "cerul",
+  "version": "1.0.0",
+  "description": "Video search layer for AI agents — search what was said, shown, or presented in tech talks, podcasts, conferences, and earnings calls.",
+  "author": {
+    "name": "Cerul AI",
+    "url": "https://cerul.ai"
+  },
+  "keywords": ["video", "search", "ai-agent", "transcript", "conference"],
+  "category": "external-integrations"
+}

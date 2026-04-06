@@ -1,0 +1,18 @@
+{
+  "name": "cerul-plugin",
+  "owner": {
+    "name": "Cerul AI"
+  },
+  "metadata": {
+    "description": "Cerul plugins for Claude Code — search video content by speech, visuals, and on-screen text.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cerul",
+      "description": "Video search layer for AI agents — find any moment by what was said, shown, or presented in tech talks, podcasts, conferences, and earnings calls.",
+      "version": "1.0.0",
+      "source": "./plugins/cerul"
+    }
+  ]
+}
