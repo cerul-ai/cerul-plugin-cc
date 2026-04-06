@@ -1,8 +1,8 @@
 # Cerul Plugin for Claude Code
 
-Search video content by speech, visuals, and on-screen text — directly from Claude Code.
+**The video search layer for AI agents** — Claude Code plugin.
 
-Cerul gives Claude the ability to search what was **said**, **shown**, or **presented** in tech talks, podcasts, conference presentations, and earnings calls.
+Teach your AI agents to see. Search video by meaning — across speech, visuals, and on-screen text.
 
 ## Install
 
