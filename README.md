@@ -1,8 +1,8 @@
 # Cerul Plugin for Claude Code
 
-**The video search layer for AI agents** — Claude Code plugin.
+**Cerul: where video becomes citable** — Claude Code plugin.
 
-Teach your AI agents to see. Search video by meaning — across speech, visuals, and on-screen text.
+Search video by meaning — across speech, visuals, and on-screen text.
 
 ## Install
 

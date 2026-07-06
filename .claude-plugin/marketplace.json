@@ -4,13 +4,13 @@
     "name": "Cerul AI"
   },
   "metadata": {
-    "description": "The video search layer for AI agents — Claude Code plugin.",
+    "description": "Cerul — where video becomes citable. Claude Code plugin.",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "cerul",
-      "description": "The video search layer for AI agents. Search video by meaning — across speech, visuals, and on-screen text.",
+      "description": "Cerul — where video becomes citable. Search video by meaning — across speech, visuals, and on-screen text.",
       "version": "1.0.0",
       "source": "./plugins/cerul"
     }
