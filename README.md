@@ -2,7 +2,7 @@
 
 **Cerul: where video becomes citable** — Claude Code plugin.
 
-Search video by meaning — across speech, visuals, and on-screen text.
+The video search API for agents — meaning-based, grounded, timestamped.
 
 ## Install
 
